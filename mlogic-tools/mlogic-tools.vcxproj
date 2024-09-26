@@ -127,7 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Assignment.cpp" />
+    <ClCompile Include="AtomIdentifier.cpp" />
+    <ClCompile Include="BasicModalFormula.cpp" />
+    <ClCompile Include="KripkeSemanticsContext.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="KripkeFrame.cpp" />
+    <ClCompile Include="KripkeModel.cpp" />
     <ClCompile Include="mlogic-tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Assignment.h" />
+    <ClInclude Include="AtomIdentifier.h" />
+    <ClInclude Include="BasicModalFormula.h" />
+    <ClInclude Include="KripkeSemanticsContext.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="KripkeFrame.h" />
+    <ClInclude Include="KripkeModel.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mlogic-tools.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
