@@ -2,7 +2,7 @@ BasedOnStyle: LLVM
 IndentWidth: 4                           # 4 spaces per indent level, common in many codebases
 TabWidth: 4                              # Width of tab character
 UseTab: Never                            # Always use spaces instead of tabs
-ColumnLimit: 80                          # Line length limit to ensure readability
+ColumnLimit: 90                          # Line length limit to ensure readability
 BreakBeforeBraces: Attach                # Place braces on the same line for control statements and functions
 AllowShortFunctionsOnASingleLine: false  # Prevent one-line function declarations
 DerivePointerAlignment: false

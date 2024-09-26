@@ -1,6 +1,8 @@
 ﻿  Assignment.cpp
-  AtomIdentifier.cpp
   BasicModalFormula.cpp
   KripkeSemanticsContext.cpp
+  Graph.cpp
+  KripkeFrame.cpp
+  KripkeModel.cpp
   Generating Code...
   mlogic-tools.vcxproj -> C:\Users\andru\Desktop\Programming\Projects\Learning\Visual_Studio\mlogic-tools\x64\Debug\mlogic-tools.exe
