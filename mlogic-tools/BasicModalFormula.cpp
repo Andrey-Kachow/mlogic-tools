@@ -8,9 +8,6 @@ bool AtomFormula::evaluateEntailment(KripkeSemanticsContext& context) {
     auto worlds =
         context.getKripkeModel().getAssignment().worldsWhereAtomIsTrue(*_identifier);
     for (auto& world : worlds) {
-        //
-        // TODO: switch from & == & to a more desired by-reference comparison.
-        //
         if (&world == &context.getWorld()) {
             return true;
         }
