@@ -7,7 +7,7 @@ bool TruthFormula::evaluateEntailment(KripkeSemanticsContext& context) {
 bool AtomFormula::evaluateEntailment(KripkeSemanticsContext& context) {
     auto worlds =
         context.getKripkeModel().getAssignment().worldsWhereAtomIsTrue(*_identifier);
-    for (auto& world : *worlds) {
+    for (auto& world : worlds) {
         //
         // TODO: switch from & == & to a more desired by-reference comparison.
         //
@@ -27,7 +27,7 @@ bool BoxFormula::evaluateEntailment(KripkeSemanticsContext& context) {
     auto successors =
         context.getKripkeModel().getKripkeFrame().getSuccessorWorlds(contextWorld);
     
-    for (auto& successor : *successors) {
+    for (auto& successor : successors) {
         auto successiveContext = context.pushWorld(successor);
         if (!_operand->evaluateEntailment(*successiveContext)) {
             return false;

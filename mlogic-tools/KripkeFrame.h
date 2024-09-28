@@ -8,5 +8,5 @@ class KripkeFrame {
     std::unique_ptr<Graph<World>> _relationalStructure;
 
   public:
-    std::unique_ptr<std::set<World>> getSuccessorWorlds(World& predecessorWorld);
+    std::set<World> getSuccessorWorlds(World& predecessorWorld);
 };

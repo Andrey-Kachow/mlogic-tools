@@ -7,5 +7,5 @@
 
 class Assignment {
   public:
-    virtual std::unique_ptr<std::set<World>> worldsWhereAtomIsTrue(AtomIdentifier& atom) = 0;
+    virtual std::set<World> worldsWhereAtomIsTrue(AtomIdentifier& atom) = 0;
 };
