@@ -1,5 +1,9 @@
 #include "KripkeModel.h"
 
+KripkeModel::KripkeModel(std::unique_ptr<KripkeFrame> frame, std::unique_ptr<Assignment> assignment)
+    : _frame(std::move(frame)), _assignment(std::move(assignment)) {
+}
+
 Assignment& KripkeModel::getAssignment() {
     return *_assignment;
 }

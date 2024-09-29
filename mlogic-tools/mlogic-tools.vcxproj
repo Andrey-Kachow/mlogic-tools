@@ -128,26 +128,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="mlogic-tools.rc" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="src\graphs\DefaultMatrixGraph.cpp" />
     <ClCompile Include="src\Assignment.cpp" />
     <ClCompile Include="src\AtomIdentifier.cpp" />
     <ClCompile Include="src\BasicModalFormula.cpp" />
-    <ClCompile Include="src\Graph.cpp" />
+    <ClCompile Include="src\graphs\Graph.cpp" />
     <ClCompile Include="src\KripkeFrame.cpp" />
     <ClCompile Include="src\KripkeModel.cpp" />
     <ClCompile Include="src\KripkeSemanticsContext.cpp" />
     <ClCompile Include="src\mlogic-tools.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="src\graphs\DefaultMatrixGraph.h" />
     <ClInclude Include="src\Assignment.h" />
     <ClInclude Include="src\AtomIdentifier.h" />
     <ClInclude Include="src\BasicModalFormula.h" />
-    <ClInclude Include="src\Graph.h" />
+    <ClInclude Include="src\graphs\Graph.h" />
     <ClInclude Include="src\KripkeFrame.h" />
     <ClInclude Include="src\KripkeModel.h" />
     <ClInclude Include="src\KripkeSemanticsContext.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

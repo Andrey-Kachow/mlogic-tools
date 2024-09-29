@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="mlogic-tools.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="src\Assignment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -29,7 +24,7 @@
     <ClCompile Include="src\BasicModalFormula.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Graph.cpp">
+    <ClCompile Include="src\graphs\Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\KripkeFrame.cpp">
@@ -44,6 +39,9 @@
     <ClCompile Include="src\mlogic-tools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphs\DefaultMatrixGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Assignment.h">
@@ -55,7 +53,7 @@
     <ClInclude Include="src\BasicModalFormula.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Graph.h">
+    <ClInclude Include="src\graphs\Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\KripkeFrame.h">
@@ -67,5 +65,16 @@
     <ClInclude Include="src\KripkeSemanticsContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\graphs\DefaultMatrixGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
