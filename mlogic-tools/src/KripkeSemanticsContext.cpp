@@ -16,3 +16,8 @@ KripkeSemanticsContext::pushWorld(std::shared_ptr<World> newWorld) {
 
     return std::make_unique<KripkeSemanticsContext>(newContext);
 }
+
+KripkeSemanticsContext::KripkeSemanticsContext(std::shared_ptr<KripkeModel> kripkeModel,
+                                               std::shared_ptr<World> world)
+    : _kripkeModel(kripkeModel), _world(world) {
+}

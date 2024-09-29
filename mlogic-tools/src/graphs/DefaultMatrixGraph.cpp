@@ -26,3 +26,7 @@ std::set<std::shared_ptr<World>> DefaultMatrixGraph::getDestinationsFrom(World& 
 World& DefaultMatrixGraph::operator[](int index) {
     return *_nodes[index];
 }
+
+std::shared_ptr<World> DefaultMatrixGraph::getWorld(int index) {
+    return _nodes[index];
+}

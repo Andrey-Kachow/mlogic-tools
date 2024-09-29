@@ -13,4 +13,5 @@ class KripkeModel {
 
     Assignment& getAssignment();
     KripkeFrame& getKripkeFrame();
+    std::shared_ptr<World> getWorld(int index);
 };

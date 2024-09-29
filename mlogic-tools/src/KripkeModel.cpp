@@ -11,3 +11,7 @@ Assignment& KripkeModel::getAssignment() {
 KripkeFrame& KripkeModel::getKripkeFrame() {
     return *_frame;
 }
+
+std::shared_ptr<World> KripkeModel::getWorld(int index) {
+    return _frame->getWorld(index);
+}

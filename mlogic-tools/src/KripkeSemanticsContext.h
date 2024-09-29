@@ -7,6 +7,8 @@ class KripkeSemanticsContext {
     std::shared_ptr<World> _world;
 
   public:
+    KripkeSemanticsContext(std::shared_ptr<KripkeModel> kripkeModel, std::shared_ptr<World> world);
+
     KripkeModel& getKripkeModel();
     World& getWorld();
 
