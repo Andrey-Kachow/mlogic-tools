@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mlogic-tools", "mlogic-tools\mlogic-tools.vcxproj", "{F369B8F0-ECAB-4980-BE25-C8A0B894112B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mlogic-tests", "mlogic-tests\mlogic-tests.vcxproj", "{859CDFC7-D3F9-4EF4-8914-5D282150AF19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{F369B8F0-ECAB-4980-BE25-C8A0B894112B}.Release|x64.Build.0 = Release|x64
 		{F369B8F0-ECAB-4980-BE25-C8A0B894112B}.Release|x86.ActiveCfg = Release|Win32
 		{F369B8F0-ECAB-4980-BE25-C8A0B894112B}.Release|x86.Build.0 = Release|Win32
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Debug|x64.ActiveCfg = Debug|x64
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Debug|x64.Build.0 = Debug|x64
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Debug|x86.ActiveCfg = Debug|Win32
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Debug|x86.Build.0 = Debug|Win32
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Release|x64.ActiveCfg = Release|x64
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Release|x64.Build.0 = Release|x64
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Release|x86.ActiveCfg = Release|Win32
+		{859CDFC7-D3F9-4EF4-8914-5D282150AF19}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

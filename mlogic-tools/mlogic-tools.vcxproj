@@ -118,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:/Users/andru/Desktop/Programming/Projects/mlogic-tools/mlogic-tools/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,27 +128,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Assignment.cpp" />
-    <ClCompile Include="AtomIdentifier.cpp" />
-    <ClCompile Include="BasicModalFormula.cpp" />
-    <ClCompile Include="KripkeSemanticsContext.cpp" />
-    <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="KripkeFrame.cpp" />
-    <ClCompile Include="KripkeModel.cpp" />
-    <ClCompile Include="mlogic-tools.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Assignment.h" />
-    <ClInclude Include="AtomIdentifier.h" />
-    <ClInclude Include="BasicModalFormula.h" />
-    <ClInclude Include="KripkeSemanticsContext.h" />
-    <ClInclude Include="Graph.h" />
-    <ClInclude Include="KripkeFrame.h" />
-    <ClInclude Include="KripkeModel.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="mlogic-tools.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Assignment.cpp" />
+    <ClCompile Include="src\AtomIdentifier.cpp" />
+    <ClCompile Include="src\BasicModalFormula.cpp" />
+    <ClCompile Include="src\Graph.cpp" />
+    <ClCompile Include="src\KripkeFrame.cpp" />
+    <ClCompile Include="src\KripkeModel.cpp" />
+    <ClCompile Include="src\KripkeSemanticsContext.cpp" />
+    <ClCompile Include="src\mlogic-tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Assignment.h" />
+    <ClInclude Include="src\AtomIdentifier.h" />
+    <ClInclude Include="src\BasicModalFormula.h" />
+    <ClInclude Include="src\Graph.h" />
+    <ClInclude Include="src\KripkeFrame.h" />
+    <ClInclude Include="src\KripkeModel.h" />
+    <ClInclude Include="src\KripkeSemanticsContext.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,3 +1,4 @@
+#include "KripkeSemanticsContext.h"
 #include "BasicModalFormula.h"
 
 bool TruthFormula::evaluateEntailment(KripkeSemanticsContext& context) {
