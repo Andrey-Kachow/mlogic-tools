@@ -66,11 +66,10 @@ TEST(ExampleModel_I, Box_not_p_w3) {
     //
     // box p
     //
-    auto boxP_ptr =
-        std::make_unique<BoxFormula>(std::make_unique<NotFormula>(std::make_unique<AtomFormula>(AtomIdentifier("p"))));
+    auto boxP_ptr = std::make_unique<BoxFormula>(
+        std::make_unique<NotFormula>(std::make_unique<AtomFormula>(AtomIdentifier("p"))));
 
     auto world3 = exampleModel_I_ptr->getWorld(2);
-
 
     KripkeSemanticsContext world3Context(exampleModel_I_ptr, world3);
     EXPECT_TRUE(boxP_ptr->evaluateEntailment(world3Context));
@@ -82,16 +81,44 @@ TEST(ExampleModel_I, Box_False_w3) {
     std::cout << "Begin\n";
 
     auto exampleModel_I_ptr = example_model_I_ex13();
-    //
-    // box p
-    //
-    auto boxP_ptr = std::make_unique<BoxFormula>(
+    
+    auto box_False = std::make_unique<BoxFormula>(
         std::make_unique<NotFormula>(std::make_unique<TruthFormula>()));
 
     auto world3 = exampleModel_I_ptr->getWorld(2);
 
     KripkeSemanticsContext world3Context(exampleModel_I_ptr, world3);
-    EXPECT_TRUE(boxP_ptr->evaluateEntailment(world3Context));
+    EXPECT_TRUE(box_False->evaluateEntailment(world3Context));
+
+    std::cout << "End\n";
+}
+
+TEST(ExampleModel_I, Box_q_is_false_at_w1) {
+    std::cout << "Begin\n";
+
+    auto exampleModel_I_ptr = example_model_I_ex13();
+    
+    auto boxQ_ptr = std::make_unique<BoxFormula>(std::make_unique<AtomFormula>(AtomIdentifier("q")));
+
+    auto world1 = exampleModel_I_ptr->getWorld(0);
+
+    KripkeSemanticsContext world3Context(exampleModel_I_ptr, world1);
+    EXPECT_FALSE(boxQ_ptr->evaluateEntailment(world3Context));
+
+    std::cout << "End\n";
+}
+
+TEST(ExampleModel_I, Box_q_is_true_at_w2) {
+    std::cout << "Begin\n";
+
+    auto exampleModel_I_ptr = example_model_I_ex13();
+    auto boxQ_ptr =
+        std::make_unique<BoxFormula>(std::make_unique<AtomFormula>(AtomIdentifier("q")));
+
+    auto world2 = exampleModel_I_ptr->getWorld(1);
+
+    KripkeSemanticsContext world3Context(exampleModel_I_ptr, world2);
+    EXPECT_TRUE(boxQ_ptr->evaluateEntailment(world3Context));
 
     std::cout << "End\n";
 }

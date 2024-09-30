@@ -16,7 +16,7 @@ class TruthFormula : public BasicModalFormula {
 
 class AtomFormula : public BasicModalFormula {
   private:
-    std::unique_ptr<AtomIdentifier> _identifier;
+    std::shared_ptr<AtomIdentifier> _identifier;
 
   public:
     AtomFormula(AtomIdentifier& identifier)
@@ -26,16 +26,16 @@ class AtomFormula : public BasicModalFormula {
 
 class UnaryOperationFormula : public BasicModalFormula {
   protected:
-    std::unique_ptr<BasicModalFormula> _operand;
+    std::shared_ptr<BasicModalFormula> _operand;
 
-    UnaryOperationFormula(std::unique_ptr<BasicModalFormula> formulaPtr)
+    UnaryOperationFormula(std::shared_ptr<BasicModalFormula> formulaPtr)
         : _operand(std::move(formulaPtr)) {
     }
 };
 
 class NotFormula : public UnaryOperationFormula {
   public:
-    NotFormula(std::unique_ptr<BasicModalFormula> formulaPtr)
+    NotFormula(std::shared_ptr<BasicModalFormula> formulaPtr)
         : UnaryOperationFormula(std::move(formulaPtr)) {
     }
     bool evaluateEntailment(KripkeSemanticsContext& context);
@@ -51,12 +51,37 @@ class BoxFormula : public UnaryOperationFormula {
 
 class BinaryOperationFormula : public BasicModalFormula {
   protected:
-    std::unique_ptr<BasicModalFormula> _leftOperand;
-    std::unique_ptr<BasicModalFormula> _rightOperand;
+    std::shared_ptr<BasicModalFormula> _leftOperand;
+    std::shared_ptr<BasicModalFormula> _rightOperand;
+
+    BinaryOperationFormula(std::shared_ptr<BasicModalFormula> left,
+                           std::shared_ptr<BasicModalFormula> right)
+        : _leftOperand(std::move(left)), _rightOperand(std::move(right)) {
+    }
 };
 
 class AndFormula : public BinaryOperationFormula {
   public:
-    //using BinaryOperationFormula::BinaryOperationFormula;
+    AndFormula(std::shared_ptr<BasicModalFormula> left, std::shared_ptr<BasicModalFormula> right)
+        : BinaryOperationFormula(std::move(left), std::move(right)) {
+    }
+
     bool evaluateEntailment(KripkeSemanticsContext& context);
+};
+
+class DerivedFormulas {
+  public:
+    static std::shared_ptr<BasicModalFormula> falseFormula();
+    static std::shared_ptr<BasicModalFormula> orFormula(std::shared_ptr<BasicModalFormula> left,
+                                                        std::shared_ptr<BasicModalFormula> right);
+    static std::shared_ptr<BasicModalFormula> implies(std::shared_ptr<BasicModalFormula> left,
+                                                      std::shared_ptr<BasicModalFormula> right);
+
+    class iff : public BinaryOperationFormula {
+        bool evaluateEntailment(KripkeSemanticsContext& context);
+
+        iff(std::shared_ptr<BasicModalFormula> left, std::shared_ptr<BasicModalFormula> right)
+            : BinaryOperationFormula(std::move(left), std::move(right)) {
+        }
+    };
 };
