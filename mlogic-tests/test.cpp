@@ -33,7 +33,7 @@ std::shared_ptr<KripkeModel> example_model_I_ex13() {
                                          std::move(ex13AssignmentPtr));
 }
 
-TEST(Box_p, ExampleModel_I) {
+TEST(ExampleModel_I, Box_p) {
     std::cout << "Begin\n";
 
     auto exampleModel_I_ptr = example_model_I_ex13();
@@ -51,10 +51,47 @@ TEST(Box_p, ExampleModel_I) {
     EXPECT_TRUE(boxP_ptr->evaluateEntailment(world1Context));
 
     KripkeSemanticsContext world3Context(exampleModel_I_ptr, world3);
-    EXPECT_TRUE(boxP_ptr->evaluateEntailment(world1Context));
+    EXPECT_TRUE(boxP_ptr->evaluateEntailment(world3Context));
 
     KripkeSemanticsContext world4Context(exampleModel_I_ptr, world4);
-    EXPECT_FALSE(boxP_ptr->evaluateEntailment(world1Context));
+    EXPECT_FALSE(boxP_ptr->evaluateEntailment(world4Context));
+
+    std::cout << "End\n";
+}
+
+TEST(ExampleModel_I, Box_not_p_w3) {
+    std::cout << "Begin\n";
+
+    auto exampleModel_I_ptr = example_model_I_ex13();
+    //
+    // box p
+    //
+    auto boxP_ptr =
+        std::make_unique<BoxFormula>(std::make_unique<NotFormula>(std::make_unique<AtomFormula>(AtomIdentifier("p"))));
+
+    auto world3 = exampleModel_I_ptr->getWorld(2);
+
+
+    KripkeSemanticsContext world3Context(exampleModel_I_ptr, world3);
+    EXPECT_TRUE(boxP_ptr->evaluateEntailment(world3Context));
+
+    std::cout << "End\n";
+}
+
+TEST(ExampleModel_I, Box_False_w3) {
+    std::cout << "Begin\n";
+
+    auto exampleModel_I_ptr = example_model_I_ex13();
+    //
+    // box p
+    //
+    auto boxP_ptr = std::make_unique<BoxFormula>(
+        std::make_unique<NotFormula>(std::make_unique<TruthFormula>()));
+
+    auto world3 = exampleModel_I_ptr->getWorld(2);
+
+    KripkeSemanticsContext world3Context(exampleModel_I_ptr, world3);
+    EXPECT_TRUE(boxP_ptr->evaluateEntailment(world3Context));
 
     std::cout << "End\n";
 }

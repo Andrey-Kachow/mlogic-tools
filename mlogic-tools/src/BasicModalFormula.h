@@ -33,9 +33,11 @@ class UnaryOperationFormula : public BasicModalFormula {
     }
 };
 
-class NegationFormula : public UnaryOperationFormula {
+class NotFormula : public UnaryOperationFormula {
   public:
-    using UnaryOperationFormula::UnaryOperationFormula;
+    NotFormula(std::unique_ptr<BasicModalFormula> formulaPtr)
+        : UnaryOperationFormula(std::move(formulaPtr)) {
+    }
     bool evaluateEntailment(KripkeSemanticsContext& context);
 };
 

@@ -9,14 +9,14 @@ bool AtomFormula::evaluateEntailment(KripkeSemanticsContext& context) {
     auto worlds =
         context.getKripkeModel().getAssignment().worldsWhereAtomIsTrue(*_identifier);
     for (auto& world : worlds) {
-        if (&world == &context.getWorld()) {
+        if (world == context.getWorld()) {
             return true;
         }
     }
     return false;
 }
 
-bool NegationFormula::evaluateEntailment(KripkeSemanticsContext& context) {
+bool NotFormula::evaluateEntailment(KripkeSemanticsContext& context) {
     return !_operand->evaluateEntailment(context);
 }
 
