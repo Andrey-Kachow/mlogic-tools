@@ -55,6 +55,12 @@ DerivedFormulas::implies(std::shared_ptr<BasicModalFormula> left,
         std::move(left), std::make_shared<NotFormula>(std::move(right))));
 }
 
+std::shared_ptr<BasicModalFormula>
+DerivedFormulas::diamond(std::shared_ptr<BasicModalFormula> operand) {
+    return std::make_shared<NotFormula>(
+        std::make_shared<BoxFormula>(std::make_shared<NotFormula>(std::move(operand))));
+}
+
 bool DerivedFormulas::iff::evaluateEntailment(KripkeSemanticsContext& context) {
     auto leftImpliesRight = implies(_leftOperand, _rightOperand);
     if (!leftImpliesRight->evaluateEntailment(context)) {

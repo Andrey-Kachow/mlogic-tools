@@ -43,7 +43,7 @@ class NotFormula : public UnaryOperationFormula {
 
 class BoxFormula : public UnaryOperationFormula {
   public:
-    BoxFormula(std::unique_ptr<BasicModalFormula> formulaPtr)
+    BoxFormula(std::shared_ptr<BasicModalFormula> formulaPtr)
         : UnaryOperationFormula(std::move(formulaPtr)) {
     }
     bool evaluateEntailment(KripkeSemanticsContext& context);
@@ -84,4 +84,6 @@ class DerivedFormulas {
             : BinaryOperationFormula(std::move(left), std::move(right)) {
         }
     };
+
+    static std::shared_ptr<BasicModalFormula> diamond(std::shared_ptr<BasicModalFormula> operand);
 };
